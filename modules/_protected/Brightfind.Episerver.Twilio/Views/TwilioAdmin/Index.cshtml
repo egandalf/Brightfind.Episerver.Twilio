@@ -1,0 +1,66 @@
+﻿@using Brightfind.Episerver.Twilio.ViewModels
+
+@model TwilioConfigurationViewModel
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                @using (Html.BeginForm(new { @class = "" }))
+            {
+                    @Html.AntiForgeryToken()
+                    <h1>Twilio Configuration</h1>
+                    <p></p>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FromPhone)
+                        @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control", type = "tel" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ApiSid)
+                        @Html.TextBoxFor(m => m.ApiSid, new { @class = "form-control", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ApiSecret)
+                        @Html.TextBoxFor(m => m.ApiSecret, new { @class = "form-control", type = "text" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.AccountSid)
+                        @Html.TextBoxFor(m => m.AccountSid, new { @class = "form-control", type = "text" })
+                    </div>
+                    <p style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="background-color: #E04622; color: #fff;">Save</button>
+                    </p>
+                }
+            </div>
+            @if (!string.IsNullOrEmpty(Model.AccountSid)
+            || !string.IsNullOrEmpty(Model.ApiSecret)
+            || !string.IsNullOrEmpty(Model.ApiSid)
+            || !string.IsNullOrEmpty(Model.FromPhone))
+            {
+                <div class="col-sm-12">
+                    @using (Html.BeginForm("Delete", "TwilioAdmin"))
+                {
+                        @Html.HttpMethodOverride(HttpVerbs.Delete)
+                        @Html.AntiForgeryToken()
+                        <h3>Clear Saved Data</h3>
+                        <p></p>
+                        <p style="text-align: center;">
+                            <button type="submit" class="btn btn-warning">Clear Saved Data</button>
+                        </p>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
