@@ -178,12 +178,13 @@
     <None Include="app.config" />
     <Content Include="modules\_protected\Brightfind.Episerver.Twilio\Views\TwilioAdmin\Index.cshtml" />
     <Content Include="modules\_protected\Brightfind.Episerver.Twilio\Views\web.config" />
+    <None Include="Brightfind.Episerver.Twilio.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir C:\NugetDemo\$(ProjectName)
-C:\Nuget\3.4.4\nuget.exe pack $(ProjectPath) -outputdir C:\NugetDemo\$(ProjectName)\</PostBuildEvent>
+C:\Nuget\3.4.4\nuget.exe pack -build $(ProjectDir)\$(ProjectName).nuspec -outputdir C:\NugetDemo\$(ProjectName)\ -suffix beta -version 0.2</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

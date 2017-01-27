@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Brightfind.Episerver.Twilio")]
-[assembly: AssemblyDescription("Plug-and-Play integration with Twilio")]
+[assembly: AssemblyDescription("Plug-and-Play integration with Twilio for Episerver CMS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Brightfind")]
 [assembly: AssemblyProduct("Brightfind.Episerver.Twilio")]

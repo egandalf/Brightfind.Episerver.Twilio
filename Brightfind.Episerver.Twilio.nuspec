@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Brightfind.Episerver.Twilio</id>
+    <version>$version$</version>
+    <title>Brightfind.Episerver.Twilio</title>
+    <authors>James Stout (Brightfind)</authors>
+    <owners>Brightfind</owners>
+    <projectUrl>https://github.com/egandalf/Brightfind.Episerver.Twilio</projectUrl>
+    <iconUrl>http://creative.brightfind.com/Brightfind/Logos/PNG/brightfind-logo-alt.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides configuration admin view for input of API settings and a simple SMS send method.</description>
+    <releaseNotes>Initial Release - Provides configuration admin view for input of API settings and a simple SMS send method.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>EPiServerModulePackage Twilio SMS</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="Episerver.Cms.Core" version="10.0" />
+        <dependency id="Twilio" version="4.7" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Brightfind.Episerver.Twilio.???" target="lib"/>
+    <file src="modules\**" target="content\modules"/>
+  </files>
+</package>
