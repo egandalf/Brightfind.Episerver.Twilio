@@ -14,10 +14,8 @@
     <copyright>Copyright 2017</copyright>
     <tags>EPiServerModulePackage Twilio SMS</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.5.2">
         <dependency id="Episerver.Cms.Core" version="10.0" />
         <dependency id="Twilio" version="4.7" />
-      </group>
     </dependencies>
   </metadata>
   <files>
