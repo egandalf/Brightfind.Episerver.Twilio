@@ -19,7 +19,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Debug\Brightfind.Episerver.Twilio.???" target="lib"/>
+    <file src="bin\Debug\Brightfind.Episerver.Twilio.???" target="lib\net452"/>
     <file src="modules\**" target="content\modules"/>
   </files>
 </package>
